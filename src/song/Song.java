@@ -3,6 +3,7 @@ package song;
 import java.util.List;
 
 import static java.util.Arrays.asList;
+import static song.Verse.verse;
 
 public class Song {
 
@@ -26,7 +27,7 @@ public class Song {
 
         for (int i = 1; i <= animals.size(); i++) {
             List<Animal> verseAnimals = animals.subList(animals.size() - i, animals.size());
-            Verse verse = new Verse(verseAnimals);
+            Verse verse = verse(verseAnimals);
             result += verse.toString() + "\n";
         }
 

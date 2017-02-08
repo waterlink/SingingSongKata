@@ -6,12 +6,14 @@ import java.util.Arrays;
 import java.util.Collections;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static song.Animal.animal;
+import static song.Verse.verse;
 
-public class VerseTest {
+public class NormalVerseTest {
     @Test
     void toString_forFly() {
-        Verse verse = new Verse(Collections.singletonList(
-                new Animal("fly", "perhaps she'll die!"))
+        Verse verse = verse(Collections.singletonList(
+                animal("fly", "perhaps she'll die!"))
         );
 
         String representation = verse.toString();
@@ -23,8 +25,8 @@ public class VerseTest {
 
     @Test
     void toString_forBee() {
-        Verse verse = new Verse(Collections.singletonList(
-                new Animal("bee", "perhaps she'll flee!")
+        Verse verse = verse(Collections.singletonList(
+                animal("bee", "perhaps she'll flee!")
         ));
 
         String representation = verse.toString();
@@ -36,9 +38,9 @@ public class VerseTest {
 
     @Test
     void toString_forFly_andSpider() {
-        Verse verse = new Verse(Arrays.asList(
-                new Animal("spider", "That wriggled and wiggled and tickled inside her."),
-                new Animal("fly", "perhaps she'll die!")
+        Verse verse = verse(Arrays.asList(
+                animal("spider", "That wriggled and wiggled and tickled inside her."),
+                animal("fly", "perhaps she'll die!")
         ));
 
         String representation = verse.toString();
@@ -52,10 +54,10 @@ public class VerseTest {
 
     @Test
     void toString_forFly_andSpider_andBird() {
-        Verse verse = new Verse(Arrays.asList(
-                new Animal("bird", "How absurd to swallow a bird."),
-                new Animal("spider", "not important"),
-                new Animal("fly", "perhaps she'll die!")
+        Verse verse = verse(Arrays.asList(
+                animal("bird", "How absurd to swallow a bird."),
+                animal("spider", "not important"),
+                animal("fly", "perhaps she'll die!")
         ));
 
         String representation = verse.toString();
@@ -70,10 +72,10 @@ public class VerseTest {
 
     @Test
     void toString_forFly_andCamel_andBee() {
-        Verse verse = new Verse(Arrays.asList(
-                new Animal("bee", "How absurd to swallow a bee."),
-                new Animal("camel", "not important"),
-                new Animal("fly", "perhaps she'll die!")
+        Verse verse = verse(Arrays.asList(
+                animal("bee", "How absurd to swallow a bee."),
+                animal("camel", "not important"),
+                animal("fly", "perhaps she'll die!")
         ));
 
         String representation = verse.toString();
@@ -88,13 +90,13 @@ public class VerseTest {
 
     @Test
     void toString_forMoreStuff() {
-        Verse verse = new Verse(Arrays.asList(
-                new Animal("cow", "I don't know how she swallowed a cow!"),
-                new Animal("dog", "not important"),
-                new Animal("cat", "not important"),
-                new Animal("bird", "not important"),
-                new Animal("spider", "not important"),
-                new Animal("fly", "perhaps she'll die!")
+        Verse verse = verse(Arrays.asList(
+                animal("cow", "I don't know how she swallowed a cow!"),
+                animal("dog", "not important"),
+                animal("cat", "not important"),
+                animal("bird", "not important"),
+                animal("spider", "not important"),
+                animal("fly", "perhaps she'll die!")
         ));
 
         String representation = verse.toString();
