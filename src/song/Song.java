@@ -27,8 +27,7 @@ public class Song {
 
         for (int i = 1; i <= animals.size(); i++) {
             List<Animal> verseAnimals = animals.subList(animals.size() - i, animals.size());
-            Verse verse = verse(verseAnimals);
-            result += verse.toString() + "\n";
+            result += verse(verseAnimals).toString() + "\n";
         }
 
         return result;
