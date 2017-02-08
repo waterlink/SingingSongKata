@@ -1,6 +1,30 @@
-public class SongWriter {
-    String writeSong() {
-        return "There was an old lady who swallowed a fly.\n" +
+package song;
+
+import org.junit.jupiter.api.Test;
+
+import java.io.PrintStream;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class MainTest extends PrintStream {
+
+    private String output = "";
+
+    MainTest() {
+        super(System.err);
+        System.setOut(this);
+    }
+
+    @Override
+    public void println(Object o) {
+        output += o.toString();
+    }
+
+    @Test
+    void main() {
+        Main.main(new String[]{});
+
+        assertEquals("There was an old lady who swallowed a fly.\n" +
                 "I don't know why she swallowed a fly - perhaps she'll die!\n" +
                 "\n" +
                 "There was an old lady who swallowed a spider;\n" +
@@ -39,6 +63,7 @@ public class SongWriter {
                 "I don't know why she swallowed a fly - perhaps she'll die!\n" +
                 "\n" +
                 "There was an old lady who swallowed a horse...\n" +
-                "...She's dead, of course!";
+                "...She's dead, of course!", output);
     }
+
 }
